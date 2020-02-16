@@ -4,42 +4,13 @@ import com.kyepot.bankmanager.entity.Transaction;
 
 import java.util.List;
 
-public class TransactionResponse {
-    private String status;
-    private int code;
-    private String message;
+public class TransactionResponse extends Response{
 
     private List<Transaction> transactions;
 
     public TransactionResponse(String status, int code, String message, List<Transaction> transactions){
-        this.status = status;
-        this.code = code;
-        this.message = message;
+        super(status, code, message);
         this.transactions = transactions;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public String getMessage() {
-        return message;
-    }
-
-    public void setCode(int code) {
-        this.code = code;
-    }
-
-    public void setMessage(String message) {
-        this.message = message;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    public int getCode() {
-        return code;
     }
 
     public List<Transaction> getTransactions() {
